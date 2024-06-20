@@ -43,3 +43,7 @@ resource aws_efs_mount_target "az_1_mt" {
   subnet_id      = each.value
   security_groups = [aws_security_group.efs_security_group.id]
 }
+
+output "efs_id" {
+  value = aws_efs_file_system.efs.id
+}
