@@ -11,6 +11,7 @@ variable "source_security_group_id" {
 }
 
 resource aws_efs_file_system "efs" {
+  encrypted = true
 }
 
 resource aws_security_group "efs_security_group" {
