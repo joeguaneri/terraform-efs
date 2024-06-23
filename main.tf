@@ -40,8 +40,8 @@ resource aws_security_group_rule efs_egress_security_group_rule {
 resource aws_efs_mount_target "az_1_mt" {
   for_each = var.subnet_ids
 
-  file_system_id = aws_efs_file_system.efs.id
-  subnet_id      = each.value
+  file_system_id  = aws_efs_file_system.efs.id
+  subnet_id       = each.value
   security_groups = [aws_security_group.efs_security_group.id]
 }
 
